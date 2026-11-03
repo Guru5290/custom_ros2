@@ -11,7 +11,18 @@
 
 ## Basic Commands to use:
 
-- Ros2 topic list 
+- `Ros2 topic list` : *Lists the topics you have running*
+- `Ros2 node list` : *Lists the nodes you have running*
+- `Ros2 topic list` -t : *Lists the topics alongside with the message type*
+- `Ros2 topic echo <topic_name>` : *Shows the info being published to the topic* 
+- `ros2 topic pub --once <topic_name> <message_type> "{format needed}"`:
+    To know the message type check first using:
+    `ros2 topic list -t` (Here you see the message type for the particular topic you want)
+    Then:
+    `ros2 interface show <message_type>`
+    e.g for /geometry_msg/msg/Twist : `ros2 topic pub --once <topic_name> <message_type> "{linear: {x: value, y: value, z: value}, angular: {x: value, y: value, z: value}}"`
+
+    To publish multiple times omit --once. 
 How to create your first non-oop node:
 
 import the necessary modules:
@@ -34,12 +45,5 @@ Ensures the node can be executed as a single script by executing whatever is und
 
 
 
-** If you want to publish a message to a topic once via the CLI use: ros2 topic pub --once <topic_name> <message_type> "{format needed}"
-To know the message type check first using:
-ros2 topic list -t (Here you see the message type for the particular topic you want)
-Then:
-ros2 interface show <message_type>
-e.g for /geometry_msg/msg/Twist : ros2 topic pub --once <topic_name> <message_type> "{linear: {x: value, y: value, z: value}, angular: {x: value, y: value, z: value}}"
 
-To publish multiple times omit --once. 
 
