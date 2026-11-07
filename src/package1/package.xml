@@ -6,6 +6,9 @@
   <description>TODO: Package description</description>
   <maintainer email="dismaskarimidissy64@gmail.com">d</maintainer>
   <license>Apache-2.0</license>
+  <!--Added dependencies-->
+  <exec_depennd>rclpy</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
 
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>

@@ -1,30 +1,32 @@
 from setuptools import find_packages, setup
 
-package_name = 'package1'
+package_name = "package1"
 
 setup(
     name=package_name,
-    version='0.0.0',
-    packages=find_packages(exclude=['test']),
+    version="0.0.0",
+    packages=find_packages(exclude=["test"]),
     data_files=[
-        ('share/ament_index/resource_index/packages',
-            ['resource/' + package_name]),
-        ('share/' + package_name, ['package.xml']),
+        ("share/ament_index/resource_index/packages", ["resource/" + package_name]),
+        ("share/" + package_name, ["package.xml"]),
     ],
-    install_requires=['setuptools'],
+    install_requires=["setuptools"],
     zip_safe=True,
-    maintainer='d',
-    maintainer_email='dismaskarimidissy64@gmail.com',
-    description='TODO: Package description',
-    license='Apache-2.0',
+    maintainer="d",
+    maintainer_email="dismaskarimidissy64@gmail.com",
+    description="TODO: Package description",
+    license="Apache-2.0",
     extras_require={
-        'test': [
-            'pytest',
+        "test": [
+            "pytest",
         ],
     },
     entry_points={
-        'console_scripts': [
-            'node1 = package1.node1:main'
+        "console_scripts": [
+            "node1 = package1.node1:main",
+            "non_OPP_node = package1.non_OPP_node:main",
+            "minimal_publisher = package1.minimal_publisher:main",
+            "minimal_subscriber = package1.minimal_subscriber:main"
         ],
     },
 )
